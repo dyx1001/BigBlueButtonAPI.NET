@@ -44,19 +44,19 @@ What is BigBlueButton?
   |API|Method|
   |--|--|
   |create|public async Task&lt;CreateMeetingResponse&gt; CreateMeetingAsync(CreateMeetingRequest request)|
-  |getDefaultConfigXML|`public async Task<string> GetDefaultConfigXMLAsync(GetDefaultConfigXMLRequest request = null)`|
-  |setConfigXML|`public async Task<SetConfigXMLResponse> SetConfigXMLAsync(SetConfigXMLRequest request)`|
-  |join|`public string GetJoinMeetingUrl(JoinMeetingRequest request)`|
-  |end|`public async Task<EndMeetingResponse> EndMeetingAsync(EndMeetingRequest request)`|
-  |isMeetingRunning|`public async Task<IsMeetingRunningResponse> IsMeetingRunningAsync(IsMeetingRunningRequest request)`|
-  |getMeetings|`public async Task<GetMeetingsResponse> GetMeetingsAsync(GetMeetingsRequest request = null)`|
-  |getMeetingInfo|`public async Task<GetMeetingInfoResponse> GetMeetingInfoAsync(GetMeetingInfoRequest request)`|
-  |getRecordings|`public async Task<GetRecordingsResponse> GetRecordingsAsync(GetRecordingsRequest request=null)`|
-  |publishRecordings|`public async Task<PublishRecordingsResponse> PublishRecordingsAsync(PublishRecordingsRequest request)`|
-  |deleteRecordings|`public async Task<DeleteRecordingsResponse> DeleteRecordingsAsync(DeleteRecordingsRequest request)`|
-  |updateRecordings|`public async Task<UpdateRecordingsResponse> UpdateRecordingsAsync(UpdateRecordingsRequest request)`|
-  |getRecordingTextTracks|`public async Task<GetRecordingTextTracksResponse> GetRecordingTextTracksAsync(GetRecordingTextTracksRequest request)`|
-  |putRecordingTextTrack|`public async Task<PutRecordingTextTrackResponse> PutRecordingTextTrackAsync(PutRecordingTextTrackRequest request)`|
+  |getDefaultConfigXML|public async Task&lt;string&gt; GetDefaultConfigXMLAsync(GetDefaultConfigXMLRequest request = null)|
+  |setConfigXML|public async Task&lt;SetConfigXMLResponse&gt; SetConfigXMLAsync(SetConfigXMLRequest request)|
+  |join|public string GetJoinMeetingUrl(JoinMeetingRequest request)|
+  |end|public async Task&lt;EndMeetingResponse&gt; EndMeetingAsync(EndMeetingRequest request)|
+  |isMeetingRunning|public async Task&lt;IsMeetingRunningResponse&gt; IsMeetingRunningAsync(IsMeetingRunningRequest request)|
+  |getMeetings|public async Task&lt;GetMeetingsResponse&gt; GetMeetingsAsync(GetMeetingsRequest request = null)|
+  |getMeetingInfo|public async Task&lt;GetMeetingInfoResponse&gt; GetMeetingInfoAsync(GetMeetingInfoRequest request)|
+  |getRecordings|public async Task&lt;GetRecordingsResponse&gt; GetRecordingsAsync(GetRecordingsRequest request=null)|
+  |publishRecordings|public async Task&lt;PublishRecordingsResponse&gt; PublishRecordingsAsync(PublishRecordingsRequest request)|
+  |deleteRecordings|public async Task&lt;DeleteRecordingsResponse&gt; DeleteRecordingsAsync(DeleteRecordingsRequest request)|
+  |updateRecordings|public async Task&lt;UpdateRecordingsResponse&gt; UpdateRecordingsAsync(UpdateRecordingsRequest request)|
+  |getRecordingTextTracks|public async Task&lt;GetRecordingTextTracksResponse&gt; GetRecordingTextTracksAsync(GetRecordingTextTracksRequest request)|
+  |putRecordingTextTrack|public async Task&lt;PutRecordingTextTrackResponse&gt; PutRecordingTextTrackAsync(PutRecordingTextTrackRequest request)|
   
   > Each method has a **XXXRequest** input parameter.  
   >  
