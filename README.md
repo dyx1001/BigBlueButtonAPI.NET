@@ -91,32 +91,32 @@ What is BigBlueButton?
   - If your project doesn't reference the NuGet Package **System.Reflection.TypeExtensions 4.3.0** or higher, please add reference.
 - Code Sample  
 Let's start a meeting (create a meeting and join it), **client** is the instance of **BigBlueButtonAPIClient**.  
-```csharp
-[HttpPost]
-public async Task<ActionResult> Start(StartModel model)
-{
-    if (!ModelState.IsValid) return View(model);
+  ```csharp
+  [HttpPost]
+  public async Task<ActionResult> Start(StartModel model)
+  {
+      if (!ModelState.IsValid) return View(model);
 
-    //1. Create a meeting
-    var responseCreateMeeting = await client.CreateMeetingAsync(new CreateMeetingRequest
-    {
-        name = "Test Meeting",
-        meetingID = model.Id
-    });
-    //Check the response from the BigBlueButton server and return error if has error.
-    if (responseCreateMeeting.returncode == Returncode.FAILED)
-    {
-        ModelState.AddModelError("", responseCreateMeeting.message);
-        return View(model);
-    }
+      //1. Create a meeting
+      var responseCreateMeeting = await client.CreateMeetingAsync(new CreateMeetingRequest
+      {
+          name = "Test Meeting",
+          meetingID = model.Id
+      });
+      //Check the response from the BigBlueButton server and return error if has error.
+      if (responseCreateMeeting.returncode == Returncode.FAILED)
+      {
+          ModelState.AddModelError("", responseCreateMeeting.message);
+          return View(model);
+      }
 
-    //2. Join the meeting as moderator
-    var url = client.GetJoinMeetingUrl(new JoinMeetingRequest
-    {
-        meetingID = model.Id,
-        fullName = model.Name,
-        password = responseCreateMeeting.moderatorPW
-    });
-    return Redirect(url);
-}
-```
+      //2. Join the meeting as moderator
+      var url = client.GetJoinMeetingUrl(new JoinMeetingRequest
+      {
+          meetingID = model.Id,
+          fullName = model.Name,
+          password = responseCreateMeeting.moderatorPW
+      });
+      return Redirect(url);
+  }
+  ```
