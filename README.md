@@ -43,7 +43,7 @@ What is BigBlueButton?
   
   |API|Method|
   |--|--|
-  |create|<pre>public async Task<CreateMeetingResponse> CreateMeetingAsync(CreateMeetingRequest request)</pre>|
+  |create|public async Task&lt;CreateMeetingResponse&gt; CreateMeetingAsync(CreateMeetingRequest request)|
   |getDefaultConfigXML|`public async Task<string> GetDefaultConfigXMLAsync(GetDefaultConfigXMLRequest request = null)`|
   |setConfigXML|`public async Task<SetConfigXMLResponse> SetConfigXMLAsync(SetConfigXMLRequest request)`|
   |join|`public string GetJoinMeetingUrl(JoinMeetingRequest request)`|
