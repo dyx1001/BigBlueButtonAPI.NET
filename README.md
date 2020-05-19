@@ -9,9 +9,9 @@ What is BigBlueButton?
 - It supports **all of the latest BigBlueButton API 2.2**:
   - **Administration**  
 
-|Resource|Description|
-|:---------|:------------|
-|create|Creates a new meeting.|
-|getDefaultConfigXML|Gets the default config.xml (these settings configure the BigBlueButton client for each user).|
+  |Resource|Description|
+  |:---------|:------------|
+  |create|Creates a new meeting.|
+  |getDefaultConfigXML|Gets the default config.xml (these settings configure the BigBlueButton client for each user).|
 
   - aaaa
