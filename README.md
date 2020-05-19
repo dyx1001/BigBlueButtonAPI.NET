@@ -60,7 +60,7 @@ What is BigBlueButton?
   
   > Each method has a **XXXRequest** input parameter.  
   >  
-  > Most of methods return Task &lt;XXXResponse&gt;, it contains the result data or error data: If the BigBlueButton API meets errors, the **returncode** of the response equals to **Returncode.FAILED**; the **messageKey** of the response is the error code; the **message** of the response is the error message.
+  > Most of methods return **Task&lt;XXXResponse&gt;**, it contains the result data or error data: If the BigBlueButton API meets errors, the **returncode** of the response equals to **Returncode.FAILED**; the **messageKey** of the response is the error code; the **message** of the response is the error message.
   >
   > Only the **GetDefaultConfigXMLAsync** method and the **GetJoinMeetingUrl** method return string.
   
