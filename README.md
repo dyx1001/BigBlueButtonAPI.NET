@@ -72,7 +72,7 @@ What is BigBlueButton?
   >> The **ServerAPIUrl** property: The BigBlueButton server API endpoint (usually the server’s hostname followed by **/bigbluebutton/api/**, for example: http://yourserver.com/bigbluebutton/api/ ).
   >>
   >> The **SharedSecret** property: The shared secret code that is needed for the BigBlueButton server API. You can retrieve it using the command in your BigBlueButton server:  
-  `$ bbb-conf --secret`
+  >> `$ bbb-conf --secret`
 - **It makes some enhancement: meta, recording, etc.**
 ## Quickstart
 - **BigBlueButtonAPI.NET** is built on .NET Standard 1.3. It depends these packages:
