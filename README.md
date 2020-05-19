@@ -57,7 +57,8 @@ What is BigBlueButton?
   |updateRecordings|public async Task&lt;UpdateRecordingsResponse&gt; UpdateRecordingsAsync(UpdateRecordingsRequest request)|
   |getRecordingTextTracks|public async Task&lt;GetRecordingTextTracksResponse&gt; GetRecordingTextTracksAsync(GetRecordingTextTracksRequest request)|
   |putRecordingTextTrack|public async Task&lt;PutRecordingTextTrackResponse&gt; PutRecordingTextTrackAsync(PutRecordingTextTrackRequest request)|
-  
+  > Each method has similar style:
+  > 
   > Each method has a **XXXRequest** input parameter.  
   >  
   > Most of methods return **Task&lt;XXXResponse&gt;**, it contains the result data or error data: If the BigBlueButton API meets errors, the **returncode** of the response equals to **Returncode.FAILED**; the **messageKey** of the response is the error code; the **message** of the response is the error message.
@@ -73,7 +74,7 @@ What is BigBlueButton?
   >>
   >> The **SharedSecret** property: The shared secret code that is needed for the BigBlueButton server API. You can retrieve it using the command in your BigBlueButton server:  
   >> `$ bbb-conf --secret`
-- **It makes some enhancement: meta, recording, etc.**
+- **It makes some enhancements: meta, recording, etc.**
 ## Quickstart
 - **BigBlueButtonAPI.NET** is built on .NET Standard 1.3. It depends these packages:
   - NETStandard.Library 1.6.1
