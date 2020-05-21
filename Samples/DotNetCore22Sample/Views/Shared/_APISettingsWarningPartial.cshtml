@@ -1,0 +1,29 @@
+﻿
+<h3>The demo had some problems:</h3>
+<style>
+    .highlight {
+        background-color: #f8f9fa;
+        padding: 1.5rem;
+    }
+    .highlight pre {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        background-color: transparent;
+        border: 0;
+    }
+</style>
+<ul>
+    <li>Make sure your network can access your BigBlueButton server.</li>
+    <li>Make sure the setup of your BigBlueButton server is correct.</li>
+    <li>To run the demo, you need to modify the settings in the <b>BigBlueButtonAPISettings</b> section of the <b>appsettings.json</b> file.
+        <ul>
+            <li><b>ServerAPIUrl</b>: The BigBlueButton server API endpoint (usually the server’s hostname followed by <b>/bigbluebutton/api/</b>, for example: http://yourserver.com/bigbluebutton/api/ ).</li>
+            <li>
+                <b>SharedSecret</b>: The shared secret code that is needed for the BigBlueButton server API. You can retrieve it using the command in your BigBlueButton server:
+                <figure class="highlight"><pre>$ bbb-conf --secret</pre></figure>
+
+            </li>
+        </ul>
+    </li>
+</ul>

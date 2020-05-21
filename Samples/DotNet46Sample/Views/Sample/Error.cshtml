@@ -1,0 +1,6 @@
+﻿@using BigBlueButtonAPI.Core;
+@{
+    ViewData["Title"] = "Error";
+}
+@model IBaseResponse
+<h4 class="text-danger"><b>@Model.messageKey</b> @Model.message</h4>

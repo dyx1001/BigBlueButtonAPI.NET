@@ -1,0 +1,132 @@
+﻿@using BigBlueButtonAPI.Core;
+
+@{
+    ViewData["Title"] = "Meetings Sample";
+    //The ASP.NET 4.6 sample uses Bootstrap 3 and the ASP.NET Core 2.2 sample uses Bootstrap 4.
+    //We use the same layout for two samples.
+    var useBootstrap4 = true;
+    var btn_default = useBootstrap4 ? "btn-secondary" : "btn-default";
+    var pull_right = useBootstrap4 ? "float-right" : "pull-right";
+}
+
+@model GetMeetingsResponse
+@if (Model == null)
+{
+    await Html.RenderPartialAsync("_APISettingsWarningPartial");
+}
+else
+{
+    <style>
+        .item-holder {
+            border-radius: 4px;
+            padding: 10px;
+            border: 1px solid gray;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            padding-bottom: 10px;
+        }
+
+        .sub-item-holder {
+            background: lightgray;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 5px;
+        }
+
+        .item-holder span {
+            color: #337ab7;
+            margin-right: 10px;
+        }
+
+        .btn {
+            margin-left: 10px;
+        }
+
+        .btn-group .btn {
+            margin-right: 2px;
+        }
+    </style>
+    <h3>
+        Meetings
+        <a href='@Url.Action("GetDefaultConfigXML")' class="btn @btn_default @pull_right" target="_blank">GetDefaultConfigXML</a>
+        <a href='@Url.Action("Create")' class="btn @btn_default @pull_right">Create Meeting</a>
+    </h3>
+    if (Model.meetings != null && Model.meetings.Count > 0)
+    {
+        foreach (var meeting in Model.meetings)
+        {
+            <div class="item-holder">
+                <div>
+                    <label>Name:</label> <span>@meeting.meetingName</span>
+                    <label>ID:</label> <span>@meeting.meetingID</span>
+                    <label>Internal ID:</label> <span>@meeting.internalMeetingID</span>
+                    @if (@meeting.isBreakout == true)
+                    {
+                        <label>Breakout:</label> <span>@meeting.sequence</span> <span>@(meeting.freeJoin == true ? "Free Join" : "Not Free Join")</span>
+                    }
+                </div>
+                @if (!string.IsNullOrEmpty(@meeting.parentMeetingID))
+                {
+                    <div>
+                        <label>Parent ID:</label> <span>@meeting.parentMeetingID</span>
+                    </div>
+                }
+                @if (meeting.breakoutRooms != null && meeting.breakoutRooms.Count > 0)
+                {
+                    <div>
+                        <label>BreakoutRooms:</label>
+                        @foreach (var room in meeting.breakoutRooms)
+                        {
+                            <span>@room</span>
+                        }
+                    </div>
+                }
+
+                <div>
+
+
+                    <label>Running:</label> <span>@meeting.running</span>
+                    <label>Duration:</label> <span>@meeting.duration</span>
+                    <label>User Joined:</label> <span>@meeting.hasUserJoined</span>
+                    <label>Moderator:</label> <span>@meeting.moderatorCount</span>
+                    <label>Participant:</label> <span>@meeting.participantCount</span>
+
+                </div>
+
+
+                @if (meeting.attendees != null && meeting.attendees.Count > 0)
+                {
+                    foreach (var attendee in meeting.attendees)
+                    {
+                        <div class="sub-item-holder">
+                            <label>Name:</label> <span>@attendee.fullName</span>
+                            <label>User ID:</label> <span>@attendee.userID</span>
+                            <label>Role:</label> <span>@attendee.role</span>
+                            <label>Voice:</label> <span>@attendee.hasJoinedVoice</span>
+                            <label>Video:</label> <span>@attendee.hasVideo</span>
+                            <label>Listening Only:</label> <span>@attendee.isListeningOnly</span>
+                            <label>Presenter:</label> <span>@attendee.isPresenter</span>
+                        </div>
+                    }
+                }
+
+                <div class="clearfix">
+                    <div class="btn-group @pull_right">
+                        <a href='@Url.Action("Join", new {meetingID=meeting.meetingID, role=0, pass=meeting.attendeePW, token=1 })' class="btn @btn_default" target="_blank">As Attendee (Config)</a>
+                        <a href='@Url.Action("Join",new {meetingID=meeting.meetingID, role=1, pass=meeting.moderatorPW, token=1 })' class="btn @btn_default" target="_blank">As Moderator (Config)</a>
+                        <a href='@Url.Action("Join",new {meetingID=meeting.meetingID, role=0, pass=meeting.attendeePW })' class="btn @btn_default" target="_blank">As Attendee</a>
+                        <a href='@Url.Action("Join",new {meetingID=meeting.meetingID, role=1, pass=meeting.moderatorPW})' class="btn @btn_default" target="_blank">As Moderator</a>
+                    </div>
+                    <label class="@pull_right" style="line-height:34px; margin-left:10px;">Join: </label>
+
+                    <a href='@Url.Action("GetMeetingInfo",new {meetingID=meeting.meetingID})' class="btn @btn_default @pull_right" target="_blank">GetMeetingInfo</a>
+                    <a href='@Url.Action("End",new {meetingID=meeting.meetingID, pass=meeting.moderatorPW })' class="btn @btn_default @pull_right">End</a>
+                </div>
+            </div>
+        }
+    }
+}
+

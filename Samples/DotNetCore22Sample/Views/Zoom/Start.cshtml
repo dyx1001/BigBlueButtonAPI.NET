@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Start a meeting";
+}
+@model Sample.Models.StartModel
+@if (Model == null)
+{
+    await Html.RenderPartialAsync("_APISettingsWarningPartial");
+}
+else
+{
+    <h3 style="margin-bottom:20px;">Start a meeting</h3>
+    <style>
+        input.form-control {
+            max-width: 100%;
+        }
+
+        .field-validation-error, .validation-summary-errors {
+            color: red;
+        }
+
+        .validation-summary-errors ul {
+            padding-left: 0;
+        }
+
+        .validation-summary-errors ul li {
+            list-style-type: none;
+        }
+
+        .input-group-btn .btn {
+            width: 65px;
+        }
+
+        label {
+            white-space: nowrap;
+        }
+        .form-control[readonly] {
+            background-color: #ffffff;
+            cursor: text;
+        }
+    </style>
+
+    using (Html.BeginForm("Start", "Zoom", FormMethod.Post, new { @class = "form-horizontal", target = "_blank" }))
+    {
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            <div class="container">
+                <div class="row">
+                    @Html.LabelFor(m => m.Url, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.Url, new { @class = "form-control", @readonly = "readonly", id = "txtUrl" })
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button" onclick="docopy()">Copy</button>
+                            </span>
+                        </div>
+                        <p class="help-block">Please copy the url to your friends and invite them to enter the meeting.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="form-group">
+            <div class="container">
+                <div class="row">
+                    @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Please enter your name and click \"Start\" to start the meeting." })
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="submit">Start</button>
+                            </span>
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Name)
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        @Html.HiddenFor(m => m.Id)
+
+    }
+
+    @section Scripts {
+        <script>
+            function docopy() {
+                var ctrl = document.getElementById("txtUrl");
+                ctrl.select();
+                document.execCommand("copy");
+            }
+        </script>
+    }
+}

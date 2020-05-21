@@ -1,0 +1,425 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+<style>
+    c_k {
+        display: inline-block;
+        color: #6300ff;
+    }
+
+    c_t {
+        display: inline-block;
+        color: #5491bc;
+    }
+
+    c_m {
+        display: inline-block;
+        color: #a4531f;
+    }
+
+    c_v {
+        display: inline-block;
+        color: #1f37aa;
+    }
+
+    c_l {
+        display: inline-block;
+        color: #8f00d6;
+    }
+
+    c_c {
+        display: inline-block;
+        color: #638000;
+    }
+
+    .highlight {
+        background-color: #f8f9fa;
+        padding: 1.5rem;
+    }
+
+    .highlight pre {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        background-color: transparent;
+        border: 0;
+    }
+</style>
+<style>
+    .markdown-body {
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+        font-size: 16px;
+        line-height: 1.5;
+        word-wrap: break-word;
+    }
+
+    .markdown-body h1, .markdown-body h2 {
+        padding-bottom: .3em;
+        border-bottom: 1px solid #eaecef;
+    }
+
+    .markdown-body h1 {
+        font-size: 2em;
+    }
+
+    .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
+        margin-top: 24px;
+        margin-bottom: 16px;
+        font-weight: 600;
+        line-height: 1.25;
+    }
+
+    .markdown-body h2 {
+        font-size: 1.5em;
+    }
+
+    .markdown-body blockquote {
+        padding: 0 1em;
+        color: #6a737d;
+        border-left: .25em solid #dfe2e5;
+    }
+
+    .markdown-body blockquote > :first-child {
+        margin-top: 0;
+    }
+
+    .markdown-body p, .markdown-body pre, .markdown-body table, .markdown-body ul {
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    .markdown-body ol, .markdown-body ul {
+        padding-left: 2em;
+    }
+
+    .markdown-body code {
+        padding: .2em .4em;
+        margin: 0;
+        font-size: 85%;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+    }
+    .markdown-body td code {
+        background-color: transparent;
+    }
+    .markdown-body ul ul {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .markdown-body table {
+        display: block;
+        width: 100%;
+        overflow: auto;
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+
+    .markdown-body table tr {
+        background-color: #fff;
+        border-top: 1px solid #c6cbd1;
+    }
+
+    .markdown-body table tr:nth-child(2n) {
+        background-color: #f6f8fa;
+    }
+
+    .markdown-body table td, .markdown-body table th {
+        padding: 6px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    .markdown-body table th {
+        font-weight: 600;
+    }
+
+    .markdown-body b {
+        font-weight:600;
+    }
+</style>
+<div class="markdown-body">
+    <h1>BigBlueButtonAPI.NET - BigBlueButton API .NET Standard SDK</h1>
+    <p>
+        It helps the .NET Framework application or the .NET Core application integrate with BigBlueButton API, <b>quickly and easily</b>.
+    </p>
+    <p>
+        What is BigBlueButton?
+    </p>
+    <p>
+        <a href="http://bigbluebutton.org" target="_blank">BigBlueButton</a> is an open source web conferencing system for online learning.
+    </p>
+    <h2>BigBlueButtonAPI.NET Features:</h2>
+    <ul>
+        <li>It is built on <b>.NET Standard 1.3</b>. Any .NET platform that implements .NET Standard 1.3 can use it (<b>.NET Framework 4.6 or higher</b>, <b>.NET Core</b>, etc.).</li>
+        <li>
+            It supports <b>all of the latest BigBlueButton API 2.2</b>:
+            <ul>
+                <li>
+                    <b>Administration</b>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>API</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>create</td>
+                                <td>Creates a new meeting.</td>
+                            </tr>
+                            <tr>
+                                <td>getDefaultConfigXML</td>
+                                <td>Gets the default config.xml (these settings configure the BigBlueButton client for each user).</td>
+                            </tr>
+                            <tr>
+                                <td>setConfigXML</td>
+                                <td>Adds a custom config.xml to an existing meeting.</td>
+                            </tr>
+                            <tr>
+                                <td>join</td>
+                                <td>Joins a new user to an existing meeting.</td>
+                            </tr>
+                            <tr>
+                                <td>end</td>
+                                <td>Ends meeting.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li>
+                    <b>Monitoring</b>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>API</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>isMeetingRunning</td>
+                                <td>Checks whether if a specified meeting is running.</td>
+                            </tr>
+                            <tr>
+                                <td>getMeetings</td>
+                                <td>Gets the list of Meetings.</td>
+                            </tr>
+                            <tr>
+                                <td>getMeetingInfo</td>
+                                <td>Gets the details of a Meeting.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li>
+                    <b>Recording</b>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>API</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>getRecordings</td>
+                                <td>Gets a list of recordings.</td>
+                            </tr>
+                            <tr>
+                                <td>publishRecordings</td>
+                                <td>Enables publishing or unpublishing of a recording.</td>
+                            </tr>
+                            <tr>
+                                <td>deleteRecordings</td>
+                                <td>Deletes an existing recording.</td>
+                            </tr>
+                            <tr>
+                                <td>updateRecordings</td>
+                                <td>Updates metadata in a recording.</td>
+                            </tr>
+                            <tr>
+                                <td>getRecordingTextTracks</td>
+                                <td>Gets a list of the caption/subtitle.</td>
+                            </tr>
+                            <tr>
+                                <td>putRecordingTextTrack</td>
+                                <td>Uploads a caption or subtitle file to add it to the recording.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li>
+                    Please reference the following document: <a href="http://docs.bigbluebutton.org/dev/api.html" target="_blank">http://docs.bigbluebutton.org/dev/api.html</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            The <b>BigBlueButtonAPI.Core.BigBlueButtonAPIClient</b> class provides functions to call the BigBlueButton APIs.
+            <ul>
+                <li>
+                    The public methods:
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>API</th>
+                                <th>Method</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>create</td>
+                                <td><c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>CreateMeetingResponse</c_t>&gt; <c_m>CreateMeetingAsync</c_m>(<c_t>CreateMeetingRequest</c_t> <c_v>request</c_v>)</td>
+                            </tr>
+                            <tr>
+                                <td>getDefaultConfigXML</td>
+                                <td><c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_k>string</c_k>&gt; <c_m>GetDefaultConfigXMLAsync</c_m>(<c_t>GetDefaultConfigXMLRequest</c_t> <c_v>request</c_v> = <c_k>null</c_k>)</td>
+                            </tr>
+                            <tr>
+                                <td>setConfigXML</td>
+                                <td><c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>SetConfigXMLResponse</c_t>&gt; <c_m>SetConfigXMLAsync</c_m>(<c_t>SetConfigXMLRequest</c_t> <c_v>request</c_v>)</td>
+                            </tr>
+                            <tr>
+                                <td>join</td>
+                                <td><c_k>public string</c_k> <c_m>GetJoinMeetingUrl</c_m>(<c_t>JoinMeetingRequest</c_t> <c_v>request</c_v>)</td>
+                            </tr>
+                            <tr>
+                                <td>end</td>
+                                <td><c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>EndMeetingResponse</c_t>&gt; <c_m>EndMeetingAsync</c_m>(<c_t>EndMeetingRequest</c_t> <c_v>request</c_v>)</td>
+                            </tr>
+                            <tr>
+                                <td>isMeetingRunning</td>
+                                <td><c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>IsMeetingRunningResponse</c_t>&gt; <c_m>IsMeetingRunningAsync</c_m>(<c_t>IsMeetingRunningRequest</c_t> <c_v>request</c_v>)</td>
+                            </tr>
+                            <tr>
+                                <td>getMeetings</td>
+                                <td><c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>GetMeetingsResponse</c_t>&gt; <c_m>GetMeetingsAsync</c_m>(<c_t>GetMeetingsRequest</c_t> <c_v>request</c_v> = <c_k>null</c_k>)</td>
+                            </tr>
+                            <tr>
+                                <td>getMeetingInfo</td>
+                                <td><c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>GetMeetingInfoResponse</c_t>&gt; <c_m>GetMeetingInfoAsync</c_m>(<c_t>GetMeetingInfoRequest</c_t> <c_v>request</c_v>)</td>
+                            </tr>
+                            <tr>
+                                <td>getRecordings</td>
+                                <td><c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>GetRecordingsResponse</c_t>&gt; <c_m>GetRecordingsAsync</c_m>(<c_t>GetRecordingsRequest</c_t> <c_v>request</c_v> = <c_k>null</c_k>)</td>
+                            </tr>
+                            <tr>
+                                <td>publishRecordings</td>
+                                <td><c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>PublishRecordingsResponse</c_t>&gt; <c_m>PublishRecordingsAsync</c_m>(<c_t>PublishRecordingsRequest</c_t> <c_v>request</c_v>)</td>
+                            </tr>
+                            <tr>
+                                <td>deleteRecordings</td>
+                                <td><c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>DeleteRecordingsResponse</c_t>&gt; <c_m>DeleteRecordingsAsync</c_m>(<c_t>DeleteRecordingsRequest</c_t> <c_v>request</c_v>)</td>
+                            </tr>
+                            <tr>
+                                <td>updateRecordings</td>
+                                <td><c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>UpdateRecordingsResponse</c_t>&gt; <c_m>UpdateRecordingsAsync</c_m>(<c_t>UpdateRecordingsRequest</c_t> <c_v>request</c_v>)</td>
+                            </tr>
+                            <tr>
+                                <td>getRecordingTextTracks</td>
+                                <td><c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>GetRecordingTextTracksResponse</c_t>&gt; <c_m>GetRecordingTextTracksAsync</c_m>(<c_t>GetRecordingTextTracksRequest</c_t> <c_v>request</c_v>)</td>
+                            </tr>
+                            <tr>
+                                <td>putRecordingTextTrack</td>
+                                <td><c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>PutRecordingTextTrackResponse</c_t>&gt; <c_m>PutRecordingTextTrackAsync</c_m>(<c_t>PutRecordingTextTrackRequest</c_t> <c_v>request</c_v>)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <blockquote>
+                        <p>Each method has similar style:</p>
+                        <p>Each method has a <b>XXXRequest</b> input parameter.</p>
+                        <p>
+                            Most of methods return <b>Task&lt;XXXResponse&gt;</b>, it contains the result data or error data:
+                            If the BigBlueButton API meets errors, the <b>returncode</b> of the response equals to <b>Returncode.FAILED</b>;
+                            the <b>messageKey</b> of the response is the error code; the <b>message</b> of the response is the error message.
+                        </p>
+                        <p>
+                            Only the <b>GetDefaultConfigXMLAsync</b> method and the <b>GetJoinMeetingUrl</b> method return string.
+                        </p>
+                    </blockquote>
+                </li>
+                <li>
+                    The constructor method:
+                    <div class="highlight">
+                        <c_k>public</c_k> <c_m>BigBlueButtonAPIClient</c_m>(<c_t>BigBlueButtonAPISettings</c_t> <c_v>settings</c_v>, <c_t>HttpClient</c_t> <c_v>httpClient</c_v>)
+                    </div>
+                    <blockquote>
+                        <p>The <b>BigBlueButtonAPI.Core.BigBlueButtonAPISettings</b> class contains the config data for the BigBlueButton API:</p>
+                        <blockquote>
+                            <p>The <b>ServerAPIUrl</b> property: The BigBlueButton server API endpoint (usually the server’s hostname followed by <b>/bigbluebutton/api/</b>, for example: http://yourserver.com/bigbluebutton/api/ ).</p>
+                            <p>
+                                The <b>SharedSecret</b> property: The shared secret code that is needed for the BigBlueButton server API. You can retrieve it using the command in your BigBlueButton server:
+                                <br/><code>$ bbb-conf --secret</code>
+                            </p>
+                        </blockquote>
+                    </blockquote>
+                </li>
+            </ul>
+
+        </li>
+        <li><b>It makes some enhancements: meta, recording, etc.</b></li>
+    </ul>
+    <h2>Quickstart</h2>
+    <ul>
+        <li>
+            <b>BigBlueButtonAPI.NET</b> is built on .NET Standard 1.3. It depends these packages:
+            <ul>
+                <li>NETStandard.Library 1.6.1</li>
+                <li>Newtonsoft.Json 10.0.1</li>
+                <li>System.Reflection.TypeExtensions 4.3.0</li>
+                <li>System.Xml.XmlSerializer 4.3.0</li>
+            </ul>
+        </li>
+        <li>The source project and samples projects are built by VS 2019.</li>
+        <li>
+            How to use it in your ASP.NET Core project?
+            <ul>
+                <li>Add the reference <b>BigBlueButtonAPI.NET.dll</b> to your project.</li>
+                <li>If your project doesn't reference the NuGet Package <b>Newtonsoft.Json 10.0.1</b> or higher, please add reference.</li>
+            </ul>
+        </li>
+        <li>
+            How to use it in your ASP.NET project?
+            <ul>
+                <li>You project should target .NET Framework 4.6 or higher.</li>
+                <li>Add the reference <b>BigBlueButtonAPI.NET.dll</b> to your project.</li>
+                <li>If your project doesn't reference the NuGet Package <b>Newtonsoft.Json 10.0.1</b> or higher, please add reference.</li>
+                <li>If your project doesn't reference the NuGet Package <b>System.Reflection.TypeExtensions 4.3.0</b> or higher, please add reference.</li>
+            </ul>
+        </li>
+        <li>
+            Code Sample
+            <br />Let's start a meeting (create a meeting and join it), <b>client</b> is the instance of <b>BigBlueButtonAPIClient</b>
+            <div class="highlight">
+                <pre>
+[<c_t>HttpPost</c_t>]
+<c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>ActionResult</c_t>&gt; <c_m>Start</c_m>(<c_t>StartModel</c_t> <c_v>model</c_v>)
+{
+    <c_l>if</c_l> (!ModelState.IsValid) <c_l>return</c_l> <c_m>View</c_m>(<c_v>model</c_v>);
+
+    <c_c>//1. Create a meeting</c_c>
+    <c_k>var</c_k> <c_v>responseCreateMeeting</c_v> = <c_k>await</c_k> <c_v>client</c_v>.<c_m>CreateMeetingAsync</c_m>(<c_k>new</c_k> <c_t>CreateMeetingRequest</c_t>
+    {
+        name = <c_m>"Test Meeting"</c_m>,
+        meetingID = <c_v>model</c_v>.Id
+    });
+    <c_c>//Check the response from the BigBlueButton server and return error if has error.</c_c>
+    <c_l>if</c_l> (<c_v>responseCreateMeeting</c_v>.returncode == <c_t>Returncode</c_t>.FAILED)
+    {
+        ModelState.<c_m>AddModelError</c_m>(<c_m>""</c_m>, <c_v>responseCreateMeeting</c_v>.message);
+        return <c_m>View</c_m>(<c_v>model</c_v>);
+    }
+
+    <c_c>//2. Join the meeting as moderator</c_c>
+    <c_k>var</c_k> <c_v>url</c_v> = client.<c_m>GetJoinMeetingUrl</c_m>(<c_k>new</c_k> <c_t>JoinMeetingRequest</c_t>
+    {
+        meetingID = <c_v>model</c_v>.Id,
+        fullName = <c_v>model</c_v>.Name,
+        password = <c_v>responseCreateMeeting</c_v>.moderatorPW
+    });
+    <c_l>return</c_l> <c_m>Redirect</c_m>(<c_v>url</c_v>);
+}</pre>
+            </div>
+        </li>
+    </ul>
+</div>
+

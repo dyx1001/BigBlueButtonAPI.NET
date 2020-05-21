@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCore22Sample", "DotNetCore22Sample.csproj", "{0A65131B-100F-459C-BA66-F2E71017BF07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigBlueButtonAPI.NET", "..\..\Source\BigBlueButtonAPI.NET\BigBlueButtonAPI.NET.csproj", "{F99E97F2-B39A-4FB8-B794-C49ADB98F6BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A65131B-100F-459C-BA66-F2E71017BF07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A65131B-100F-459C-BA66-F2E71017BF07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A65131B-100F-459C-BA66-F2E71017BF07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A65131B-100F-459C-BA66-F2E71017BF07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F99E97F2-B39A-4FB8-B794-C49ADB98F6BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F99E97F2-B39A-4FB8-B794-C49ADB98F6BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F99E97F2-B39A-4FB8-B794-C49ADB98F6BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F99E97F2-B39A-4FB8-B794-C49ADB98F6BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91137DF3-FF6B-4DBE-8CA6-503CF6D889CD}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,142 @@
+﻿@using BigBlueButtonAPI.Core;
+
+@{
+    ViewData["Title"] = "Recordings Sample";
+    //The ASP.NET 4.6 sample uses Bootstrap 3 and the ASP.NET Core 2.2 sample uses Bootstrap 4.
+    //We use the same layout for two samples.
+    var useBootstrap4 = true;
+    var btn_default = useBootstrap4 ? "btn-secondary" : "btn-default";
+    var pull_right = useBootstrap4 ? "float-right" : "pull-right";
+    var pull_left = useBootstrap4 ? "float-left" : "pull-left";
+}
+@model GetRecordingsResponse
+@if (Model == null)
+{
+    await Html.RenderPartialAsync("_APISettingsWarningPartial");
+}
+else
+{
+    <style>
+        .item-holder {
+            border-radius: 4px;
+            padding: 10px;
+            border: 1px solid gray;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            padding-bottom: 10px;
+        }
+
+        .sub-item-holder {
+            background: lightgray;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 5px;
+        }
+
+        .item-holder span {
+            color: #337ab7;
+            margin-right: 10px;
+        }
+
+        .btn {
+            margin-left: 10px;
+        }
+
+        .playback-holder {
+            background-color: aliceblue;
+            margin: 0 -10px 10px -10px;
+        }
+
+        .playback-item {
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            padding: 5px 10px;
+            text-align: right;
+        }
+    </style>
+    <h3>
+        Recordings
+    </h3>
+    if (Model.recordings != null && Model.recordings.Count > 0)
+    {
+        foreach (var item in Model.recordings)
+        {
+            <div class="item-holder">
+                <div>
+                    <label>Name:</label><span>@item.name</span>
+                    <label>Meeting ID:</label><span>@item.meetingID</span>
+                    <label>Internal Meeting ID:</label><span>@item.internalMeetingID</span>
+                    <label>Participants:</label><span>@item.participants</span>
+                    @if (item.isBreakout)
+                    {
+                        <span>Is Breakout</span>
+                    }
+                </div>
+                <div>
+                    <label>ID:</label><span>@item.recordID</span>
+                    <label>Raw Size:</label><span>@item.rawSize</span>
+                    <label>Size:</label><span>@item.size</span>
+                    <label>State:</label><span>@item.state</span>
+                    @if (item.metadata != null && item.metadata.ContainsKey("customdata"))
+                    {
+                        <label>Custom Metadata:</label><span>@item.metadata["customdata"]</span>
+                    }
+                </div>
+                @if (item.published && item.playbacks != null && item.playbacks.Count > 0)
+                {
+                    <div class="playback-holder">
+                        @foreach (var playback in item.playbacks)
+                        {
+                            <div class="playback-item clearfix">
+                                @if (playback.type == "presentation")
+                                {
+                                    if (playback.previewImages != null && playback.previewImages.Count > 0)
+                                    {
+                                        <div class="@pull_left">
+                                            @foreach (var image in playback.previewImages)
+                                            {
+                                                <img src="@image.url" alt="@image.alt" height="@image.height" width="@image.width" title="@image.alt" />
+                                            }
+                                        </div>
+
+                                    }
+                                    if (!string.IsNullOrEmpty(playback.url))
+                                    {
+                                        <a href="@playback.url" class="btn btn-primary" style="margin-top:57px;" target="_blank">Playback</a>
+                                    }
+                                }
+                                else
+                                {
+                                    if (!string.IsNullOrEmpty(playback.url))
+                                    {
+                                        <label>Type: </label><span>@playback.type</span> <a href="@playback.url" class="btn @btn_default" target="_blank">Open</a>
+                                    }
+                                }
+                            </div>
+                        }
+                    </div>
+                }
+                <div class="clearfix">
+                    <a href='@Url.Action("UpdateRecordings",new {recordID=item.recordID})' class="btn @btn_default @pull_right">UpdateRecordings</a>
+                    <a href='@Url.Action("Tracks",new {recordID=item.recordID})' class="btn @btn_default @pull_right" target="_blank">GetRecordingTextTracks</a>
+                    <a href='@Url.Action("PutTrack",new {recordID=item.recordID})' class="btn @btn_default @pull_right" target="_blank">PutRecordingTextTrack</a>
+                    <a href='@Url.Action("DeleteRecordings",new {recordID=item.recordID})' class="btn @btn_default @pull_right">Delete</a>
+                    @if (item.published)
+                    {
+                        <a href='@Url.Action("PublishRecordings",new {recordID=item.recordID, type=0})' class="btn @btn_default @pull_right">Unpublish</a>
+                    }
+                    else
+                    {
+                        <a href='@Url.Action("PublishRecordings",new {recordID=item.recordID, type=1})' class="btn @btn_default @pull_right">Publish</a>
+                    }
+                </div>
+
+            </div>
+        }
+    }
+}
+
+

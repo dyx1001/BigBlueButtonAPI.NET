@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"]= "Join a meeting";
+}
+@model Sample.Models.JoinModel
+<h3 style="margin-bottom:20px;">Join a meeting</h3>
+<style>
+    input.form-control {
+        max-width: 100%;
+    }
+
+    .field-validation-error, .validation-summary-errors {
+        color: red;
+    }
+
+    .validation-summary-errors ul {
+        padding-left: 0;
+    }
+
+    .validation-summary-errors ul li {
+        list-style-type: none;
+    }
+
+    .input-group-btn .btn {
+        width: 65px;
+    }
+
+    label {
+        white-space: nowrap;
+    }
+    .form-control[readonly] {
+        background-color: #ffffff;
+        cursor: text;
+    }
+</style>
+
+@using (Html.BeginForm("Join", "Zoom", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        <div class="container">
+            <div class="row">
+                @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Please enter your name and click \"Join\" to join the meeting." })
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="submit">Join</button>
+                        </span>
+                    </div>
+                    @Html.ValidationMessageFor(m => m.Name)
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.HiddenFor(m => m.Id)
+}
+
