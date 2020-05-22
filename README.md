@@ -1,5 +1,6 @@
 # BigBlueButtonAPI.NET - BigBlueButton API .NET Standard SDK
-It helps the .NET Framework application or the .NET Core application integrate with BigBlueButton API, **quickly and easily**.
+It helps the .NET Framework application or the .NET Core application integrate with BigBlueButton API, **quickly and easily**.  
+[NuGet package is available](https://www.nuget.org/packages/BigBlueButtonAPI.NET/)
 
 What is BigBlueButton?
 
@@ -83,11 +84,11 @@ What is BigBlueButton?
   - System.Xml.XmlSerializer 4.3.0
 - The source project and samples projects are built by VS 2019.
 - How to use it in your ASP.NET Core project?
-  - Add the reference **BigBlueButtonAPI.NET.dll** to your project.
+  - Add the reference **BigBlueButtonAPI.NET.dll** or install NuGet Package **BigBlueButtonAPI.NET** to your project.
   - If your project doesn't reference the NuGet Package **Newtonsoft.Json 10.0.1** or higher, please add reference.
 - How to use it in your ASP.NET project?
   - You project should target .NET Framework 4.6 or higher.
-  - Add the reference **BigBlueButtonAPI.NET.dll** to your project.
+  - Add the reference **BigBlueButtonAPI.NET.dll** or install NuGet Package **BigBlueButtonAPI.NET** to your project.
   - If your project doesn't reference the NuGet Package **Newtonsoft.Json 10.0.1** or higher, please add reference.
   - If your project doesn't reference the NuGet Package **System.Reflection.TypeExtensions 4.3.0** or higher, please add reference.
 - Code Sample  
