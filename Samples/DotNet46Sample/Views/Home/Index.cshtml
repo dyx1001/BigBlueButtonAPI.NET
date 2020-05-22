@@ -37,13 +37,13 @@
         padding: 1.5rem;
     }
 
-        .highlight pre {
-            padding: 0;
-            margin-top: 0;
-            margin-bottom: 0;
-            background-color: transparent;
-            border: 0;
-        }
+    .highlight pre {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        background-color: transparent;
+        border: 0;
+    }
 </style>
 <style>
     .markdown-body {
@@ -53,96 +53,94 @@
         word-wrap: break-word;
     }
 
-        .markdown-body h1, .markdown-body h2 {
-            padding-bottom: .3em;
-            border-bottom: 1px solid #eaecef;
-        }
+    .markdown-body h1, .markdown-body h2 {
+        padding-bottom: .3em;
+        border-bottom: 1px solid #eaecef;
+    }
 
-        .markdown-body h1 {
-            font-size: 2em;
-        }
+    .markdown-body h1 {
+        font-size: 2em;
+    }
 
-        .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
-            margin-top: 24px;
-            margin-bottom: 16px;
-            font-weight: 600;
-            line-height: 1.25;
-        }
+    .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
+        margin-top: 24px;
+        margin-bottom: 16px;
+        font-weight: 600;
+        line-height: 1.25;
+    }
 
-        .markdown-body h2 {
-            font-size: 1.5em;
-        }
+    .markdown-body h2 {
+        font-size: 1.5em;
+    }
 
-        .markdown-body blockquote {
-            padding: 0 1em;
-            color: #6a737d;
-            border-left: .25em solid #dfe2e5;
-        }
+    .markdown-body blockquote {
+        padding: 0 1em;
+        color: #6a737d;
+        border-left: .25em solid #dfe2e5;
+    }
 
-            .markdown-body blockquote > :first-child {
-                margin-top: 0;
-            }
+    .markdown-body blockquote > :first-child {
+        margin-top: 0;
+    }
 
-        .markdown-body p, .markdown-body pre, .markdown-body table, .markdown-body ul {
-            margin-top: 0;
-            margin-bottom: 16px;
-        }
+    .markdown-body p, .markdown-body pre, .markdown-body table, .markdown-body ul {
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
 
-        .markdown-body ol, .markdown-body ul {
-            padding-left: 2em;
-        }
+    .markdown-body ol, .markdown-body ul {
+        padding-left: 2em;
+    }
 
-        .markdown-body code {
-            padding: .2em .4em;
-            margin: 0;
-            font-size: 85%;
-            background-color: rgba(27,31,35,.05);
-            border-radius: 3px;
-        }
+    .markdown-body code {
+        padding: .2em .4em;
+        margin: 0;
+        font-size: 85%;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+    }
+    .markdown-body td code {
+        background-color: transparent;
+    }
+    .markdown-body ul ul {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .markdown-body table {
+        display: block;
+        width: 100%;
+        overflow: auto;
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
 
-        .markdown-body td code {
-            background-color: transparent;
-        }
+    .markdown-body table tr {
+        background-color: #fff;
+        border-top: 1px solid #c6cbd1;
+    }
 
-        .markdown-body ul ul {
-            margin-top: 0;
-            margin-bottom: 0;
-        }
+    .markdown-body table tr:nth-child(2n) {
+        background-color: #f6f8fa;
+    }
 
-        .markdown-body table {
-            display: block;
-            width: 100%;
-            overflow: auto;
-            border-spacing: 0;
-            border-collapse: collapse;
-        }
+    .markdown-body table td, .markdown-body table th {
+        padding: 6px 13px;
+        border: 1px solid #dfe2e5;
+    }
 
-            .markdown-body table tr {
-                background-color: #fff;
-                border-top: 1px solid #c6cbd1;
-            }
+    .markdown-body table th {
+        font-weight: 600;
+    }
 
-                .markdown-body table tr:nth-child(2n) {
-                    background-color: #f6f8fa;
-                }
-
-            .markdown-body table td, .markdown-body table th {
-                padding: 6px 13px;
-                border: 1px solid #dfe2e5;
-            }
-
-            .markdown-body table th {
-                font-weight: 600;
-            }
-
-        .markdown-body b {
-            font-weight: 600;
-        }
+    .markdown-body b {
+        font-weight:600;
+    }
 </style>
 <div class="markdown-body">
     <h1>BigBlueButtonAPI.NET - BigBlueButton API .NET Standard SDK</h1>
     <p>
         It helps the .NET Framework application or the .NET Core application integrate with BigBlueButton API, <b>quickly and easily</b>.
+        <br/><a href="https://www.nuget.org/packages/BigBlueButtonAPI.NET/" target="_blank">NuGet package is available</a>
     </p>
     <p>
         What is BigBlueButton?
@@ -351,7 +349,7 @@
                             <p>The <b>ServerAPIUrl</b> property: The BigBlueButton server API endpoint (usually the server’s hostname followed by <b>/bigbluebutton/api/</b>, for example: http://yourserver.com/bigbluebutton/api/ ).</p>
                             <p>
                                 The <b>SharedSecret</b> property: The shared secret code that is needed for the BigBlueButton server API. You can retrieve it using the command in your BigBlueButton server:
-                                <br /><code>$ bbb-conf --secret</code>
+                                <br/><code>$ bbb-conf --secret</code>
                             </p>
                         </blockquote>
                     </blockquote>
@@ -376,7 +374,7 @@
         <li>
             How to use it in your ASP.NET Core project?
             <ul>
-                <li>Add the reference <b>BigBlueButtonAPI.NET.dll</b> to your project.</li>
+                <li>Add the reference <b>BigBlueButtonAPI.NET.dll</b> or install NuGet Package <b>BigBlueButtonAPI.NET</b> to your project.</li>
                 <li>If your project doesn't reference the NuGet Package <b>Newtonsoft.Json 10.0.1</b> or higher, please add reference.</li>
             </ul>
         </li>
@@ -384,7 +382,7 @@
             How to use it in your ASP.NET project?
             <ul>
                 <li>You project should target .NET Framework 4.6 or higher.</li>
-                <li>Add the reference <b>BigBlueButtonAPI.NET.dll</b> to your project.</li>
+                <li>Add the reference <b>BigBlueButtonAPI.NET.dll</b> or install NuGet Package <b>BigBlueButtonAPI.NET</b> to your project.</li>
                 <li>If your project doesn't reference the NuGet Package <b>Newtonsoft.Json 10.0.1</b> or higher, please add reference.</li>
                 <li>If your project doesn't reference the NuGet Package <b>System.Reflection.TypeExtensions 4.3.0</b> or higher, please add reference.</li>
             </ul>
@@ -397,29 +395,29 @@
 [<c_t>HttpPost</c_t>]
 <c_k>public async</c_k> <c_t>Task</c_t>&lt;<c_t>ActionResult</c_t>&gt; <c_m>Start</c_m>(<c_t>StartModel</c_t> <c_v>model</c_v>)
 {
-                <c_l>if</c_l> (!ModelState.IsValid) <c_l>return</c_l> <c_m>View</c_m>(<c_v>model</c_v>);
+    <c_l>if</c_l> (!ModelState.IsValid) <c_l>return</c_l> <c_m>View</c_m>(<c_v>model</c_v>);
 
-                <c_c>//1. Create a meeting</c_c>
-                <c_k>var</c_k> <c_v>responseCreateMeeting</c_v> = <c_k>await</c_k> <c_v>client</c_v>.<c_m>CreateMeetingAsync</c_m>(<c_k>new</c_k> <c_t>CreateMeetingRequest</c_t>
+    <c_c>//1. Create a meeting</c_c>
+    <c_k>var</c_k> <c_v>responseCreateMeeting</c_v> = <c_k>await</c_k> <c_v>client</c_v>.<c_m>CreateMeetingAsync</c_m>(<c_k>new</c_k> <c_t>CreateMeetingRequest</c_t>
     {
         name = <c_m>"Test Meeting"</c_m>,
         meetingID = <c_v>model</c_v>.Id
     });
-                <c_c>//Check the response from the BigBlueButton server and return error if has error.</c_c>
-                <c_l>if</c_l> (<c_v>responseCreateMeeting</c_v>.returncode == <c_t>Returncode</c_t>.FAILED)
+    <c_c>//Check the response from the BigBlueButton server and return error if has error.</c_c>
+    <c_l>if</c_l> (<c_v>responseCreateMeeting</c_v>.returncode == <c_t>Returncode</c_t>.FAILED)
     {
         ModelState.<c_m>AddModelError</c_m>(<c_m>""</c_m>, <c_v>responseCreateMeeting</c_v>.message);
         return <c_m>View</c_m>(<c_v>model</c_v>);
     }
 
-                <c_c>//2. Join the meeting as moderator</c_c>
-                <c_k>var</c_k> <c_v>url</c_v> = client.<c_m>GetJoinMeetingUrl</c_m>(<c_k>new</c_k> <c_t>JoinMeetingRequest</c_t>
+    <c_c>//2. Join the meeting as moderator</c_c>
+    <c_k>var</c_k> <c_v>url</c_v> = client.<c_m>GetJoinMeetingUrl</c_m>(<c_k>new</c_k> <c_t>JoinMeetingRequest</c_t>
     {
         meetingID = <c_v>model</c_v>.Id,
         fullName = <c_v>model</c_v>.Name,
         password = <c_v>responseCreateMeeting</c_v>.moderatorPW
     });
-                <c_l>return</c_l> <c_m>Redirect</c_m>(<c_v>url</c_v>);
+    <c_l>return</c_l> <c_m>Redirect</c_m>(<c_v>url</c_v>);
 }</pre>
             </div>
         </li>
