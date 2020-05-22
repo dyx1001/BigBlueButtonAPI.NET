@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
@@ -7,6 +7,15 @@
     <Description>BigBlueButtonAPI.NET - BigBlueButton API .NET Standard SDK
 
 It helps the .NET Framework application or the .NET Core application integrate with BigBlueButton API, quickly and easily.</Description>
+    <Copyright>Copyright © dyx1001  2020</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/dyx1001/BigBlueButtonAPI.NET</RepositoryUrl>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
+    <Version>1.0.2</Version>
+    <PackageProjectUrl>https://github.com/dyx1001/BigBlueButtonAPI.NET</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
